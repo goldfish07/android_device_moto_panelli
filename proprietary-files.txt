@@ -12,3 +12,9 @@ bin/mediaserver
 bin/radiooptions
 bin/rild
 
+#audio configs
+etc/audio_effects.conf
+etc/audio_param/AudioParamOptions.xml
+etc/audio_policy_volumes.xml
+etc/audio_policy.conf	
+
