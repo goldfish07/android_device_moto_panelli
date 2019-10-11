@@ -8,12 +8,6 @@ $(call inherit-product-if-exists, vendor/moto/panelli/panelli-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/moto/panelli/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
