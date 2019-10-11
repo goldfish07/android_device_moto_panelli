@@ -3,17 +3,18 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/moto/panelli/BoardConfigVendor.mk
 
+#Platform
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_PLATFORM := unknown
+TARGET_BOARD_PLATFORM := mt6737m
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_BOOTLOADER_BOARD_NAME := panelli
+TARGET_BOOTLOADER_BOARD_NAME := mt6737m
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2
 BOARD_KERNEL_BASE := 0x40000000
