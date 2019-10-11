@@ -38,3 +38,8 @@ etc/init/servicemanager.rc
 etc/init/surfaceflinger.rc
 etc/init/vold.rc
 
+#audio codecs
+etc/media_codecs.xml
+etc/media_profiles.xml
+
+
