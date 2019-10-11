@@ -16,5 +16,11 @@ bin/rild
 etc/audio_effects.conf
 etc/audio_param/AudioParamOptions.xml
 etc/audio_policy_volumes.xml
-etc/audio_policy.conf	
+etc/audio_policy.conf
+
+#bluetooth configs
+etc/bluetooth/bt_did.conf
+etc/bluetooth/bt_stack.conf
+etc/bluetooth/bt_stack.conf.debug
+etc/bluetooth/bt_stack.conf.sqc	
 
