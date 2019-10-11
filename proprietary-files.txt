@@ -24,3 +24,17 @@ etc/bluetooth/bt_stack.conf
 etc/bluetooth/bt_stack.conf.debug
 etc/bluetooth/bt_stack.conf.sqc	
 
+#init audio & camera & proccess
+etc/init/audioserver.rc
+etc/init/cameraserver.rc
+etc/init/drmserver.rc
+etc/init/gatekeeperd.rc
+etc/init/mediacodec.rc
+etc/init/mediadrmserver.rc
+etc/init/mediaextractor.rc
+etc/init/mediaserver.rc
+etc/init/rild.rc
+etc/init/servicemanager.rc
+etc/init/surfaceflinger.rc
+etc/init/vold.rc
+
