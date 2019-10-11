@@ -8,8 +8,7 @@ $(call inherit-product-if-exists, vendor/moto/panelli/panelli-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+
 
 $(call inherit-product, build/target/product/full.mk)
 
