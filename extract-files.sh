@@ -49,7 +49,7 @@ function extract() {
     done
 }
 
-BASE=../../../vendor/moto/panelli/proprietary
+BASE=../../../vendor/moto/panelli/vendor
 rm -rf $BASE/*
 
 extract ../../moto/panelli/proprietary-files.txt $BASE
