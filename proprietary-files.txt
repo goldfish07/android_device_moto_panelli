@@ -150,6 +150,7 @@ vendor/lib/libbessound_hd_mtk.so
 vendor/lib/libmtklimiter.so
 vendor/lib/libmtkshifter.so
 vendor/lib/libmp3dec_mtk.so
+vendor/lib/libbessound_hd_mtk.so
 
 
 lib/soundfx/libaudiopreprocessing.so
