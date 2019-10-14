@@ -7,6 +7,11 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/moto/panelli/device_panelli.mk)
 
+# Resolution
+TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1280
+
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := panelli
 PRODUCT_NAME := lineage_panelli
