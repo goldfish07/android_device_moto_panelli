@@ -46,7 +46,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc 
 
 
-
+#Audio libs
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@2.0-service \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    libaudio-resampler \
+    libtinyalsa \
+    libtinycompress \
+    libtinymix \
+    libtinyxml
 
 
 #Permissions
