@@ -12,6 +12,43 @@ $(call inherit-product-if-exists, vendor/moto/panelli/panelli-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
 
+#Ramdisk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ramdisk/factory_init.connectivity.rc:root/factory_init.connectivity.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.project.rc:root/factory_init.project.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.rc:root/factory_init.rc \
+    $(LOCAL_PATH)/ramdisk/factory_init.usb.rc:root/factory_init.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.aee.rc:root/init.aee.rc \
+    $(LOCAL_PATH)/ramdisk/init.common_svc.rc:root/init.common_svc.rc \
+    $(LOCAL_PATH)/ramdisk/init.connectivity.rc:root/init.connectivity.rc \
+    $(LOCAL_PATH)/ramdisk/init.environ.rc:root/init.environ.rc \
+    $(LOCAL_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
+    $(LOCAL_PATH)/ramdisk/init.microtrust.rc:root/init.microtrust.rc \
+    $(LOCAL_PATH)/ramdisk/init.modem.rc:root/init.modem.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6735.rc:root/init.mt6735.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.project.rc:root/init.project.rc \
+    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
+    $(LOCAL_PATH)/ramdisk/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
+    $(LOCAL_PATH)/ramdisk/init.rilproxy.rc:root/init.rilproxy.rc \
+    $(LOCAL_PATH)/ramdisk/init.usb.configfs.rc:root/init.usb.configfs.rc \
+    $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
+    $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
+    $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.connectivity.rc:root/meta_init.connectivity.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.modem.rc:root/meta_init.modem.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.project.rc:root/meta_init.project.rc \
+    $(LOCAL_PATH)/ramdisk/meta_init.rc:root/meta_init.rc \
+    $(LOCAL_PATH)/ramdisk/property_contexts:root/property_contexts \
+    $(LOCAL_PATH)/ramdisk/seapp_contexts:root/seapp_contexts \
+    $(LOCAL_PATH)/ramdisk/service_contexts:root/service_contexts \
+    $(LOCAL_PATH)/ramdisk/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
+    $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc 
+
+
+
+
+
 #Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
