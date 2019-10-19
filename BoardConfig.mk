@@ -77,6 +77,10 @@ MTK_SENSORS_1_0 := true
 #Camera
 MTK_EMULATOR_SUPPORT := true
 
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += device/moto/panelli/lineagehw
+
+
 #Wifi
 MTK_BASIC_PACKAGE := true
 MTK_WLAN_SUPPORT := true
