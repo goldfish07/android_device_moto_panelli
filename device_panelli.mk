@@ -12,6 +12,7 @@ $(call inherit-product-if-exists, vendor/moto/panelli/panelli-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
 
+
 #Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/factory_init.connectivity.rc:root/factory_init.connectivity.rc \

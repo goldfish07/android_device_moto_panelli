@@ -102,6 +102,7 @@ lib/librilutils.so
 vendor/lib/libged.so
 vendor/lib/libdpframework.so
 
+
 #lib/libstagefright_amrnb_common.so
 lib/libstagefright_avc_common.so
 lib/libstagefright_enc_common.so
@@ -155,6 +156,8 @@ vendor/lib/libmtklimiter.so
 vendor/lib/libmtkshifter.so
 #vendor/lib/libmp3dec_mtk.so
 vendor/lib/libbessound_hd_mtk.so
+vendor/lib/hw/hwcomposer.mt6735.so
+
 
 
 lib/soundfx/libaudiopreprocessing.so
