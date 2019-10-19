@@ -68,7 +68,11 @@ MTK_ROTATION_OFFSET_SUPPORT := true
 
 
 #Graphics
-MTK_GPU_VERSION := 1
+MTK_GPU_VERSION := mali
+
+
+#Sensor
+MTK_SENSORS_1_0 := true
 
 #Camera
 MTK_EMULATOR_SUPPORT := true

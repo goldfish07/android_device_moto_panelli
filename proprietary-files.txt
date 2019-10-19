@@ -44,26 +44,26 @@ etc/media_codecs.xml
 etc/media_profiles.xml
 
 #wifi configs
-p2p_supplicant_overlay.conf
-wpa_supplicant_overlay.conf
-wpa_supplicant.conf
+etc/wifi/p2p_supplicant_overlay.conf
+etc/wifi/wpa_supplicant_overlay.conf
+etc/wifi/wpa_supplicant.conf
 
 #library 
 lib/drm/libfwdlockengine.so
-lib/audio_policy.default.so
-lib/audio.a2dp.default.so
-lib/audio.primary.default.so
-lib/audio.r_submix.default.so
-lib/audio.usb.default.so
-lib/bluetooth.default.so
-lib/gralloc.default.so
-lib/power.default.so
+#lib/audio_policy.default.so
+#lib/audio.a2dp.default.so
+#lib/audio.primary.default.so
+#lib/audio.r_submix.default.so
+#lib/audio.usb.default.so
+#lib/bluetooth.default.so
+#lib/gralloc.default.so
+#lib/power.default.so
 
 lib/libalsautils.so
 lib/libaudio-resampler.so
 lib/libaudiocustparam.so
-lib/linaudioeffect_jni.so
-lib/libaudioflinger.so
+#lib/linaudioeffect_jni.so
+#lib/libaudioflinger.so
 lib/libaudiopolicyenginedefault.so
 lib/libaudiopolicymanager.so
 lib/libaudiopolicymanagerdefault.so
@@ -79,10 +79,10 @@ lib/libcamera2ndk.so
 lib/libcameraservice.so
 
 lib/libEGL.so
-lib/libGLEv1_CM.so
+#lib/libGLEv1_CM.so
 lib/libGLESv2.so
 lib/libGLESv3.so
-lib/libion.so
+#lib/libion.so
 lib/libmedia_jni.so
 lib/libmedia.so
 lib/libmediacodecservice.so
@@ -99,15 +99,17 @@ lib/libmtkcam_fwkutils.so
 lib/libril.so
 lib/librilmtk.so
 lib/librilutils.so
+vendor/lib/libged.so
+vendor/lib/libdpframework.so
 
-lib/libstagefright_amrnb_common.so
+#lib/libstagefright_amrnb_common.so
 lib/libstagefright_avc_common.so
 lib/libstagefright_enc_common.so
 lib/libstagefright_foundation.so
 lib/libstagefright_http_support.so
 lib/libstagefright_httplive.so
 lib/libstagefright_omx.so
-lib/libstagefright_soft_accdec.so
+#lib/libstagefright_soft_accdec.so
 lib/libstagefright_soft_aacenc.so
 lib/libstagefright_soft_amrdec.so
 lib/libstagefright_soft_amrnbenc.so
@@ -134,12 +136,14 @@ lib/libtinyalsa.so
 lib/libwifi-service.so
 lib/mtk-ril.so
 
+#lib/vendor.mediatek.hardware.dfps@1.0_vendor
+
 #vendor
 vendor/lib/libmmprofile.so
 vendor/lib/libmtklimiter.so
 vendor/lib/libnvram.so
 vendor/lib/libblisrc.so
-vendor/lib/mp3dec_mtk.so
+#vendor/lib/mp3dec_mtk.so
 vendor/lib/libspeech_enh_lib.so
 vendor/lib/libaudiosetting.so
 vendor/lib/libperfservicenative.so
@@ -149,7 +153,7 @@ vendor/lib/libcvsd_mtk.so
 vendor/lib/libbessound_hd_mtk.so
 vendor/lib/libmtklimiter.so
 vendor/lib/libmtkshifter.so
-vendor/lib/libmp3dec_mtk.so
+#vendor/lib/libmp3dec_mtk.so
 vendor/lib/libbessound_hd_mtk.so
 
 
@@ -157,7 +161,7 @@ lib/soundfx/libaudiopreprocessing.so
 lib/soundfx/libbundlewrapper.so
 lib/soundfx/libeffectproxy.so
 lib/soundfx/libldnhncr.so
-lib/soundfx/libeverbwrapper.so
+#lib/soundfx/libeverbwrapper.so
 
 #vendor
 vendor/etc/audio_device.xml
