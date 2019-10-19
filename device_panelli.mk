@@ -125,6 +125,17 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 
+# WiFi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    dhcpcd.conf \
+    hostapd \
+    lib_driver_cmd_mt66xx \
+    libwpa_client \
+    wificond \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 
 $(call inherit-product, build/target/product/full.mk)
 
