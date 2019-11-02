@@ -94,8 +94,6 @@ MTK_HWC_VERSION := 1.4.1
 MTK_GPU_VERSION := mali midgard r12p1
 OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
-#Sensor
-MTK_SENSORS_1_0 := true
 
 #Camera
 MTK_EMULATOR_SUPPORT := true
@@ -108,12 +106,6 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 # SW Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
-
-
-# GPS
-BOARD_GPS_LIBRARIES :=true
-BOARD_CONNECTIVITY_MODULE := MT6630
-BOARD_MEDIATEK_USES_GPS := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := Moto_panelli,Moto panelli,panelli,panelli
