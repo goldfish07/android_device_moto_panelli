@@ -25,7 +25,8 @@ LOCAL_C_INCLUDES += \
 	system/core/libion/include \
 	frameworks/native/libs/nativewindow/include \
 	frameworks/native/libs/nativebase/include \
-	frameworks/native/libs/arect/include
+	frameworks/native/libs/arect/include \
+
 
 LOCAL_MODULE := libgralloc_extra
 LOCAL_MODULE_TAGS := optional
