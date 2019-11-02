@@ -3,7 +3,7 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/moto/panelli/BoardConfigVendor.mk
 
-#Platform
+# Platform
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := mt6737m
@@ -16,7 +16,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOOTLOADER_BOARD_NAME := mt6737m
 
-#kernel
+# kernel
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,32N2 androidboot.selinux=disabled
 BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -39,7 +39,7 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 
-#Audio
+# Audio
 BOARD_USES_MTK_AUDIO := true
 MTK_HIGH_RESOLUTION_AUDIO_SUPPORT := true
 AUDIO_POLICY_TEST := true
@@ -68,13 +68,13 @@ TARGET_LDPRELOAD += mtk_symbols.so
 
 
 
-#HW
+# HW
 MTK_HWC_SUPPORT := true
 MTK_HWC_VERSION := 1.4
 MTK_ROTATION_OFFSET_SUPPORT := true
 
 
-#HIDL
+# HIDL
 DEVICE_MANIFEST_FILE := device/moto/panelli/hidl/manifest.xml
 
 
@@ -95,7 +95,7 @@ MTK_GPU_VERSION := mali midgard r12p1
 OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
 
-#Camera
+# Camera
 MTK_EMULATOR_SUPPORT := true
 
 # Lineage Hardware
@@ -111,7 +111,7 @@ BOARD_USE_SOFT_GATEKEEPER := true
 TARGET_OTA_ASSERT_DEVICE := Moto_panelli,Moto panelli,panelli,panelli
 
 
-#Wifi
+# Wifi
 MTK_BASIC_PACKAGE := true
 MTK_WLAN_SUPPORT := true
 BOARD_WLAN_DEVICE := MediaTek
