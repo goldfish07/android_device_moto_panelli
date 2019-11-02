@@ -34,7 +34,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.rilproxy.rc:root/init.rilproxy.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.configfs.rc:root/init.usb.configfs.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
-    $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
     $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc 
