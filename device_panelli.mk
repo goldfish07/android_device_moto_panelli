@@ -15,14 +15,7 @@ DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/factory_init.connectivity.rc:root/factory_init.connectivity.rc \
-    $(LOCAL_PATH)/ramdisk/factory_init.project.rc:root/factory_init.project.rc \
-    $(LOCAL_PATH)/ramdisk/factory_init.rc:root/factory_init.rc \
-    $(LOCAL_PATH)/ramdisk/factory_init.usb.rc:root/factory_init.usb.rc \
-    $(LOCAL_PATH)/ramdisk/init.aee.rc:root/init.aee.rc \
-    $(LOCAL_PATH)/ramdisk/init.common_svc.rc:root/init.common_svc.rc \
     $(LOCAL_PATH)/ramdisk/init.connectivity.rc:root/init.connectivity.rc \
-    $(LOCAL_PATH)/ramdisk/init.environ.rc:root/init.environ.rc \
     $(LOCAL_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
     $(LOCAL_PATH)/ramdisk/init.microtrust.rc:root/init.microtrust.rc \
     $(LOCAL_PATH)/ramdisk/init.modem.rc:root/init.modem.rc \
