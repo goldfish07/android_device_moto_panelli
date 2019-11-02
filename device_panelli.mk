@@ -36,10 +36,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
     $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
-    $(LOCAL_PATH)/ramdisk/meta_init.connectivity.rc:root/meta_init.connectivity.rc \
-    $(LOCAL_PATH)/ramdisk/meta_init.modem.rc:root/meta_init.modem.rc \
-    $(LOCAL_PATH)/ramdisk/meta_init.project.rc:root/meta_init.project.rc \
-    $(LOCAL_PATH)/ramdisk/meta_init.rc:root/meta_init.rc \
     $(LOCAL_PATH)/ramdisk/property_contexts:root/property_contexts \
     $(LOCAL_PATH)/ramdisk/seapp_contexts:root/seapp_contexts \
     $(LOCAL_PATH)/ramdisk/service_contexts:root/service_contexts \
