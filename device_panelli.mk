@@ -36,9 +36,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
     $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
-    $(LOCAL_PATH)/ramdisk/property_contexts:root/property_contexts \
-    $(LOCAL_PATH)/ramdisk/seapp_contexts:root/seapp_contexts \
-    $(LOCAL_PATH)/ramdisk/service_contexts:root/service_contexts \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc 
 
