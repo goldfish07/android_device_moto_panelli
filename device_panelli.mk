@@ -219,6 +219,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.debuggable=1 \
 	ro.config.low_ram=false
 
+# For userdebug builds
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.secure=0 \
+	ro.adb.secure=0 \
+	persist.sys.root_access=1 \
+	persist.service.adb.enable=1
+
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=cfq
@@ -235,7 +242,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	media.stagefright.use-awesome=false
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp,adb
+
+
+# USB
+PRODUCT_PACKAGES += \
+	android.hardware.usb@1.0-service
 
 # Keyhandler package
 PRODUCT_PACKAGES += \
