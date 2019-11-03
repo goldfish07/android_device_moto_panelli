@@ -22,10 +22,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.mt6735.usb.rc:root/init.mt6735.usb.rc \
     $(LOCAL_PATH)/ramdisk/init.project.rc:root/init.project.rc \
     $(LOCAL_PATH)/ramdisk/init.recovery.mt6735.rc:root/init.recovery.mt6735.rc \
-    $(LOCAL_PATH)/ramdisk/init.rilproxy.rc:root/init.rilproxy.rc \
-    $(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
+    $(LOCAL_PATH)/ramdisk/init.mt6735.power.rc:root/init.mt6735.power.rc \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
-    $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc 
 
 
 # Audio libs
