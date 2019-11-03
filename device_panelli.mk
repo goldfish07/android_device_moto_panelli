@@ -134,8 +134,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
-    
+    android.hardware.bluetooth@1.0-service \
+    libbluetooth_jni \
+    bluetooth.default \
+    libbt-vendor
+
 # Camera HAL
 PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
