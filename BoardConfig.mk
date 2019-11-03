@@ -103,6 +103,9 @@ MTK_EMULATOR_SUPPORT := true
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += device/moto/panelli/lineagehw
 
+# Lineage Charger
+WITH_LINEAGE_CHARGER := false
+
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
