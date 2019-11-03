@@ -2,6 +2,15 @@
 # system.prop for panelli
 #
 
+# Wifi
+mediatek.wlan.chip=CONSYS_MT6735
+mediatek.wlan.ctia=0
+mediatek.wlan.module.postfix=_consys_mt6735
+ro.mediatek.wlan.wsc=1
+ro.mediatek.wlan.p2p=1
+wifi.interface=wlan0
+wifi.direct.interface=p2p0
+#
 ro.adb.secure=0
 ro.oem_unlock_supported=1
 persist.service.acm.enable=0
