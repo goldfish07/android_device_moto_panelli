@@ -11,7 +11,9 @@ $(call inherit-product-if-exists, vendor/moto/panelli/panelli-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
-
+# Resolution
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
