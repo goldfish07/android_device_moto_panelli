@@ -12,6 +12,17 @@ wifi.interface=wlan0
 wifi.direct.interface=p2p0
 #
 
+# USB MTP WHQL
+ro.sys.usb.mtp.whql.enable=0
+
+# USB BICR function
+ro.sys.usb.bicr=no
+
+# USB Charge only function
+ro.sys.usb.charging.only=yes
+
+
+
 # adb
 persist.sys.root_access=1 
 persist.service.adb.enable=1
