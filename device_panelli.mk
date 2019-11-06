@@ -215,8 +215,11 @@ PRODUCT_PACKAGES += \
     
 # Power HAL
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl
+    power.default \
+    android.hardware.power@1.0-impl \
+    vendor.lineage.power@1.0-impl
     
+
 # Graphic HAL
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
