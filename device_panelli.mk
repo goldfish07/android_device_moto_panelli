@@ -113,6 +113,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
 
 
+# Telephony
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init/init.cccifsd.rc:vendor/etc/init/init.cccifsd.rc \
+    $(LOCAL_PATH)/configs/init/init.cccimdinit.rc:vendor/etc/init/init.cccimdinit.rc \
+    $(LOCAL_PATH)/configs/init/init.thermal_manager.rc:vendor/etc/init/init.thermal_manager.rc \
+    $(LOCAL_PATH)/configs/init/md_ctrl.rc:vendor/etc/init/md_ctrl.rc \
+    $(LOCAL_PATH)/configs/init/mtk_agpsd.rc:vendor/etc/init/mtk_agpsd.rc \
+    $(LOCAL_PATH)/configs/init/muxreport.rc:vendor/etc/init/muxreport.rc \
+    $(LOCAL_PATH)/configs/init/rild.rc:vendor/etc/init/rild.rc \
+
 
 # Audio
 PRODUCT_PACKAGES += \
