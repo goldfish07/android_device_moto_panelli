@@ -136,6 +136,9 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     libion
     
+# Doze
+PRODUCT_PACKAGES += MeizuDoze
+
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
