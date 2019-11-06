@@ -120,6 +120,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     lib_driver_cmd_mt66xx \
     libwpa_client \
+    wifilogd \
     wificond \
     wpa_supplicant \
     wpa_supplicant.conf
