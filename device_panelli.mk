@@ -311,6 +311,8 @@ PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
+# GC Tweaks 
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Never dexopt the keyhandler
 $(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
