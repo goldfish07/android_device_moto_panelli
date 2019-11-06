@@ -219,6 +219,9 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     vendor.lineage.power@1.0-impl
     
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-service.mediatek
 
 # Graphic HAL
 PRODUCT_PACKAGES += \
