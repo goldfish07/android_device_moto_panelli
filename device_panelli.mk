@@ -143,6 +143,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     dhcpcd.conf \
     hostapd \
+    libwifi-hal-mt66xx \
     lib_driver_cmd_mt66xx \
     libwpa_client \
     wifilogd \
