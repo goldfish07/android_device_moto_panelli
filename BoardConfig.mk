@@ -106,6 +106,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
 # Camera
 MTK_EMULATOR_SUPPORT := true
+TARGET_USES_NON_TREBLE_CAMERA := true
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += device/moto/panelli/lineagehw
