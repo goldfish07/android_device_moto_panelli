@@ -86,6 +86,8 @@ MTK_ROTATION_OFFSET_SUPPORT := true
 # HIDL
 DEVICE_MANIFEST_FILE := device/moto/panelli/hidl/manifest.xml
 
+# Include 
+TARGET_SPECIFIC_HEADER_PATH := device/moto/panelli/include
 
 #Graphics
 MTK_GPU_VERSION := mali
