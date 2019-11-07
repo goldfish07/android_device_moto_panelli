@@ -1,6 +1,12 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
+
+#    mtk_xlog.cpp
+#    mtk_audioCompat.c \
+#     mtk_gps.cpp
+
+
 LOCAL_SRC_FILES := \
     icu55.c \
     mtk_asc.cpp \

@@ -50,15 +50,14 @@ LOCAL_SRC_FILES := \
 	lib/SWWatchDog.cpp
 
 LOCAL_C_INCLUDES := \
-	device/moto/panelli/libs/libgem/inc \
+	device/moto/panelli/libgem/inc \
 	frameworks/native/libs/nativewindow/include \
 	frameworks/native/libs/nativebase/include \
 	frameworks/native/libs/arect/include \
 	external/libpng \
 	external/zlib \
 	external/skia/src/images \
-	external/skia/include/core \
-	external/skia/include/config
+	external/skia/include/core
 
 LOCAL_SHARED_LIBRARIES := \
 	libutils \
@@ -99,7 +98,7 @@ LOCAL_SRC_FILES := \
 	lib/GuiExtImpl.cpp
 
 LOCAL_C_INCLUDES := \
-	device/moto/panelli/libs/libgem/inc
+	device/moto/panelli/libgem/inc
 
 LOCAL_SHARED_LIBRARIES := \
 	libutils \

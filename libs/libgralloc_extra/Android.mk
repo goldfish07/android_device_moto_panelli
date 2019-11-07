@@ -5,10 +5,11 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
 	GraphicBufferExtra.cpp \
 	GraphicBufferExtra_hal.cpp
+#	ge.c
 
 LOCAL_C_INCLUDES := \
-	device/moto/panelli/libs/libgralloc_extra/include \
-	device/moto/panelli/libs/libgralloc_extra/../include
+	device/moto/panelli/libgralloc_extra/include \
+	device/moto/panelli/libgralloc_extra/../include
 
 LOCAL_SHARED_LIBRARIES := \
     libhardware \
@@ -19,14 +20,13 @@ LOCAL_SHARED_LIBRARIES := \
 	libged
 
 LOCAL_EXPORT_C_INCLUDE_DIRS := \
-	device/moto/panelli/libs/libgralloc_extra/include \
+	device/moto/panelli/libgralloc_extra/include \
 
 LOCAL_C_INCLUDES += \
 	system/core/libion/include \
 	frameworks/native/libs/nativewindow/include \
 	frameworks/native/libs/nativebase/include \
-	frameworks/native/libs/arect/include \
-
+	frameworks/native/libs/arect/include
 
 LOCAL_MODULE := libgralloc_extra
 LOCAL_MODULE_TAGS := optional
