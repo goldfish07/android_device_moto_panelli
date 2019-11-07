@@ -87,8 +87,8 @@ LOCAL_SHARED_LIBRARIES := \
 	libgralloc_extra
 
 LOCAL_C_INCLUDES:= \
-	device/moto/panelli/libgem/inc \
-	device/moto/panelli/libgem/gralloc_extra/include/
+	device/moto/panelli/libs/libgem/inc \
+	device/moto/panelli/libs/gralloc_extra/include/
 
 
 LOCAL_MODULE := guiext-test-surface
@@ -116,7 +116,7 @@ LOCAL_SHARED_LIBRARIES := \
 	libui_ext
 
 LOCAL_C_INCLUDES:= \
-	device/moto/panelli/libgem/inc
+	device/moto/panelli/libs/libgem/inc
 
 
 LOCAL_MODULE := wdt-test
