@@ -143,7 +143,8 @@ WIFI_DRIVER_STATE_CTRL_PARAM := /dev/wmtWifi
 WIFI_DRIVER_STATE_ON := 1
 WIFI_DRIVER_STATE_OFF := 0
 
-
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := false
