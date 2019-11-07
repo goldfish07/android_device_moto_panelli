@@ -15,6 +15,10 @@ DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# Pixel & aapt config.
+PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.connectivity.rc:root/init.connectivity.rc \
