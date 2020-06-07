@@ -73,8 +73,6 @@ typedef enum __VENC_DRV_VIDEO_FORMAT_T {
 	VENC_DRV_VIDEO_FORMAT_JPEG,                 /* /< JPEG picture format */
 	VENC_DRV_VIDEO_FORMAT_HEVC,                 /* /< HEVC video format */
 	VENC_DRV_VIDEO_FORMAT_H264SEC,              /* /<: Secure H.264 */
-        VENC_DRV_VIDEO_FORMAT_INHOUSE_H264SEC,      /* /<: Inhouse Secure H.264 */
-        VENC_DRV_VIDEO_FORMAT_H263VT,               /* /<: H.263 VT*/
 	VENC_DRV_VIDEO_FORMAT_MAX = 0xFFFFFFFF      /* /< Max VENC_DRV_VIDEO_FORMAT_T value */
 } VENC_DRV_VIDEO_FORMAT_T;
 
@@ -345,8 +343,7 @@ typedef enum __VENC_DRV_SET_TYPE_T {
 	VENC_DRV_SET_TYPE_SLOW_MOTION_UNLOCK_HW,    /* /< Set to Slow Motion Video Recording for UnLock HW */
 	VENC_DRV_SET_TYPE_NONREFP,              /* /< Set Enable/Disable Non reference P frame */
 	VENC_DRV_SET_TYPE_CONFIG_QP,            /* /< Set init QP */
-	VENC_DRV_SET_TYPE_RFS_ON,                   /* /< ViLTE RFS enable */
-	VENC_DRV_SET_TYPE_IDR_FRAME_INTERVAL,     /* /< Set IDR Frame interval */
+        VENC_DRV_SET_TYPE_RFS_ON,
 	VENC_DRV_SET_TYPE_MAX = 0xFFFFFFFF      /* /< Max VENC_DRV_SET_TYPE_T value */
 } VENC_DRV_SET_TYPE_T;
 
@@ -495,7 +492,6 @@ typedef struct __VENC_DRV_PARAM_ENC_EXTRA_T {
 	VAL_UINT32_T            u4BitRate;          /* /< [IN/OUT] BitRate kbps */
 	VAL_UINT32_T            u4FrameRateQ16;     /* /< [IN/OUT] Frame rate in Q16 format */
 	VAL_UINT32_T            u4UseMBAFF;         /* /< [IN/OUT] Use MBAFF */
-        VAL_UINT32_T            u4BitrateMode;
 } VENC_DRV_PARAM_ENC_EXTRA_T;
 
 /**
@@ -584,10 +580,6 @@ typedef struct __VENC_DRV_PARAM_FRM_BUF_T {
 	VENC_DRV_TIMESTAMP_T    rTimeStamp;         /* /< [IN] Timestamp information */
 	VENC_DRV_EIS_INPUT_T    rEISInput;          /* /< [IN] EIS information */
 	VAL_UINT32_T            rSecMemHandle;      /* /< [IN/OUT] security memory handle for SVP */
-    union {
-        ion_user_handle_t pIonBufhandle;        /* /< [IN/OUT] ion handle */
-        VAL_UINT64_T pIonBufhandle_ext64;
-    };
 } VENC_DRV_PARAM_FRM_BUF_T;
 
 /**
@@ -618,10 +610,6 @@ typedef struct __VENC_DRV_PARAM_BS_BUF_T {/*union extend 64bits for TEE */
 	};
 	VENC_DRV_TIMESTAMP_T    rTimeStamp;     /* /< [IN] Time stamp information */
 	VAL_UINT32_T            rSecMemHandle;  /* /< [IN/OUT] security memory handle for SVP */
-    union {
-        ion_user_handle_t pIonBufhandle;    /* /< [IN/OUT] ion handle */
-        VAL_UINT64_T pIonBufhandle_ext64;
-    };
 } VENC_DRV_PARAM_BS_BUF_T;
 
 /**
