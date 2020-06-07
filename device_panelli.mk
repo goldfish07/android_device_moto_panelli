@@ -11,9 +11,6 @@ $(call inherit-product-if-exists, vendor/moto/panelli/BoardConfigVendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 
-# Resolution
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
 
 # Pixel & aapt config.
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
@@ -32,18 +29,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/ueventd.mt6735.rc:root/ueventd.mt6735.rc \
 
 
-# Audio libs
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio@2.0-service \
-    audio.a2dp.default \
-    audio.r_submix.default \
-    libaudio-resampler \
-    libtinyalsa \
-    libtinycompress \
-    libtinymix \
-    libtinyxml
 
 
 # Hardware Permissions
@@ -93,6 +78,19 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
     
+
+# Audio libs
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@2.0-service \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    libaudio-resampler \
+    libtinyalsa \
+    libtinycompress \
+    libtinymix \
+    libtinyxml
 
 
 # Wifi [ETC]
@@ -161,6 +159,7 @@ PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory
 
+
 PRODUCT_PACKAGES += \
     libnl_2 \
     charger_res_images \
@@ -209,10 +208,6 @@ PRODUCT_PACKAGES += \
     mtk_symbols
     
 
-# Power
-PRODUCT_PACKAGES += \
-    power.mt6737m
-    
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
@@ -249,6 +244,7 @@ PRODUCT_PACKAGES += \
     
 # Power HAL
 PRODUCT_PACKAGES += \
+    power.mt6737m \
     power.default \
     android.hardware.power@1.0-impl \
     vendor.lineage.power@1.0-impl
