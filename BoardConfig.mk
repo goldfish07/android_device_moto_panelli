@@ -25,7 +25,6 @@ ARCH := arms
 TARGET_ARCH := arm
 KERNEL_ARCH := arm
 TARGET_KERNEL_ARCH := arm
-TARGET_KMODULES := true
 TARGET_KERNEL_HAVE_EXFAT := true
 TARGET_KERNEL_HAVE_NTFS := true
 BOARD_KERNEL_BASE := 0x40000000
@@ -92,6 +91,8 @@ OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
 # Camera
 TARGET_USES_NON_TREBLE_CAMERA := true
+TARGET_LD_SHIM_LIBS += \
+	/system/vendor/lib/hw/camera.mt6737m.so
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += device/moto/panelli/lineagehw

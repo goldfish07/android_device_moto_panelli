@@ -93,6 +93,10 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 
+# Common libs
+PRODUCT_PACKAGES += \
+	libstlport
+
 # Wifi [ETC]
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
