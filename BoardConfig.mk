@@ -4,7 +4,7 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/moto/panelli/BoardConfigVendor.mk
 
-
+# Board
 TARGET_BOARD_PLATFORM := mt6737m
 
 # Platform
@@ -18,6 +18,7 @@ TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+# Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := mt6737m
 
 # kernel
@@ -66,14 +67,12 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/moto/panelli/bluetooth
 TARGET_LDPRELOAD += mtk_symbols.so
 
 
-
 # HW
 BOARD_USES_MTK_HARDWARE := true
 
 
-
 # HIDL
-DEVICE_MANIFEST_FILE := device/moto/panelli/hidl/manifest.xml
+DEVICE_MANIFEST_FILE := device/moto/panelli/manifest.xml
 
 # Include 
 TARGET_SPECIFIC_HEADER_PATH := device/moto/panelli/include

@@ -16,6 +16,11 @@ DEVICE_PACKAGE_OVERLAYS += device/moto/panelli/overlay
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Key Layouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayouts/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
+    $(LOCAL_PATH)/keylayouts/ACCDET.kl:system/usr/keylayout/AVRCP.kl \
+    $(LOCAL_PATH)/keylayouts/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -108,22 +113,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bluetooth/bt_stack.conf.sqc:vendor/etc/bluetooth/bt_stack.conf.sqc
 
 
-
 # Telephony
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/telephony/ecc_list.xml:system/etc/ecc_list.xml \
     $(LOCAL_PATH)/configs/telephony/spn-conf.xml:system/etc/spn-conf.xml
-
-
-# Telephony
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/init/init.cccifsd.rc:vendor/etc/init/init.cccifsd.rc \
-    $(LOCAL_PATH)/configs/init/init.cccimdinit.rc:vendor/etc/init/init.cccimdinit.rc \
-    $(LOCAL_PATH)/configs/init/init.thermal_manager.rc:vendor/etc/init/init.thermal_manager.rc \
-    $(LOCAL_PATH)/configs/init/md_ctrl.rc:vendor/etc/init/md_ctrl.rc \
-    $(LOCAL_PATH)/configs/init/mtk_agpsd.rc:vendor/etc/init/mtk_agpsd.rc \
-    $(LOCAL_PATH)/configs/init/muxreport.rc:vendor/etc/init/muxreport.rc \
-    $(LOCAL_PATH)/configs/init/rild.rc:vendor/etc/init/rild.rc \
 
 
 # WiFi
@@ -152,10 +145,6 @@ PRODUCT_PACKAGES += \
     
 # Doze
 PRODUCT_PACKAGES += MeizuDoze
-
-# Storage
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
     
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -178,12 +167,7 @@ PRODUCT_PACKAGES += \
         
 # Sensors HAL
 PRODUCT_PACKAGES += \
-    lights.mt6737m
-    
-# GPS force mode
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.force.gps.mode=gnss
-    
+    lights.mt6737m  
     
 # Power HAL
 PRODUCT_PACKAGES += \
@@ -196,58 +180,41 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
-# Disable adb security
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.mount.fs=EXT4 \
-	ro.allow.mock.location=0 \
-	ro.debuggable=1 \
-	ro.config.low_ram=false
-
-# For userdebug builds
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.secure=0 \
-	ro.adb.secure=0 \
-	persist.sys.root_access=1 \
-	persist.service.adb.enable=1
-
-# IO Scheduler
+# enable Google-specific location features,
+# like NetworkLocationProvider and LocationCollector
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=cfq
+	ro.com.google.locationfeatures=1 \
+	ro.com.google.networklocation=1
 
-# Media
+# sdcardfs
 PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=0
-    
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hw.gyroscope=false \
-	persist.radio.apn_delay=5000 \
-	persist.sys.media.use-awesome=false \
-	media.stagefright.use-awesome=false
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp,adb
-
+	ro.sys.sdcardfs=false
 
 # HIDL (HAL Interface Definition Language)
 include $(LOCAL_PATH)/hidl.mk
 
 
-# Keyhandler package
-PRODUCT_PACKAGES += \
-    com.cyanogenmod.keyhandler
-
-PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
-
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
+# For userdebug builds
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.secure=0 \
+	ro.adb.secure=0 \
+	ro.debuggable=1 \
+	persist.sys.root_access=1 \
+	persist.service.adb.enable=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.usb.config=mtp,adb
+
+# Android Go
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.config.low_ram=false
+
 # GC Tweaks 
 PRODUCT_TAGS += dalvik.gc.type-precise
-
-# Never dexopt the keyhandler
-$(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
 
 # Device
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
