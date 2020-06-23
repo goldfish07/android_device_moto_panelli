@@ -17,7 +17,7 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     liblog \
     libion \
-	libged
+    libged
 
 LOCAL_EXPORT_C_INCLUDE_DIRS := \
 	device/moto/panelli/libs/libgralloc_extra/include \

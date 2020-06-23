@@ -53,8 +53,8 @@ LOCAL_SHARED_LIBRARIES := \
 
 
 LOCAL_C_INCLUDES:= \
-	device/moto/panelli/libgem/inc \
-	device/moto/panelli/libgem/gralloc_extra/include/
+	device/moto/panelli/libs/libgem/inc \
+	device/moto/panelli/libs/libgem/gralloc_extra/include/
 
 
 LOCAL_MODULE := guiext-test
@@ -88,7 +88,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_C_INCLUDES:= \
 	device/moto/panelli/libs/libgem/inc \
-	device/moto/panelli/libs/gralloc_extra/include/
+	device/moto/panelli/libs/libgem/gralloc_extra/include/
 
 
 LOCAL_MODULE := guiext-test-surface
