@@ -83,6 +83,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml
     
 
+# Seccomp policy
+PRODUCT_COPY_FILES += \
+    device/moto/panelli/seccomp/mediacodec.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
+    device/moto/panelli/seccomp/mediaextractor.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
+    
+
 # Audio libs
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
