@@ -98,6 +98,12 @@ TARGET_LD_SHIM_LIBS += \
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += device/moto/panelli/lineagehw
 
+# RIL
+BOARD_RIL_CLASS := ../../../device/moto/panelli/ril/
+
+# build.prop
+TARGET_SYSTEM_PROP := device/moto/panelli/system.prop
+
 # Lineage Charger
 WITH_LINEAGE_CHARGER := false
 
@@ -110,6 +116,7 @@ BOARD_USE_SOFT_GATEKEEPER := true
 # Assert
 TARGET_OTA_ASSERT_DEVICE := Moto_panelli,Moto panelli,panelli,panelli
 
+BOARD_DISABLE_HW_ID_MATCH_CHECK := true
 
 # Wifi
 BOARD_WLAN_DEVICE := MediaTek
@@ -133,6 +140,3 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 BOARD_HAS_DOWNLOAD_MODE := false
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := device/moto/panelli/ramdisk/recovery.fstab
-
-# TWRP
-TW_THEME := portrait_hdpi
