@@ -104,6 +104,10 @@ BOARD_RIL_CLASS := ../../../device/moto/panelli/ril/
 # build.prop
 TARGET_SYSTEM_PROP := device/moto/panelli/system.prop
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS := \
+       device/moto/panelli/sepolicy
+
 # Lineage Charger
 WITH_LINEAGE_CHARGER := false
 
