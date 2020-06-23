@@ -198,6 +198,10 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
+# fstab
+PRODUCT_PACKAGES += \
+	libfs_mgr
+
 # For userdebug builds
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.secure=0 \
