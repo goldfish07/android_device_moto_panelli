@@ -62,6 +62,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 
+# Camera Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
@@ -143,8 +144,6 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     libion
     
-# Doze
-PRODUCT_PACKAGES += MeizuDoze
     
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -192,6 +191,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # HIDL (HAL Interface Definition Language)
 include $(LOCAL_PATH)/hidl.mk
+PRODUCT_COPY_FILES += \
+    device/moto/panelli/manifest.xml:system/vendor/manifest.xml
 
 
 # Dalvik/HWUI

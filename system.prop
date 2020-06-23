@@ -1,17 +1,20 @@
 #
 # system.prop for mt6737m
 #
+ro.hardware=mt6735
+ro.board.platform=mt6737m
 
-#display
+#
 ro.sf.lcd_density=320
 persist.sys.lcd_density=320
-ro.opengles.version=196610
 
-# Power off opt in IPO
-sys.ipo.pwrdncap=2
+ro.opengles.version=196610
 
 # USB MTP WHQL
 ro.sys.usb.mtp.whql.enable=0
+
+# Power off opt in IPO
+sys.ipo.pwrdncap=2
 
 # USB BICR function
 ro.sys.usb.bicr=no
@@ -28,11 +31,13 @@ ro.zygote.preload.enable=0
 # Disable dirty region for Mali
 debug.hwui.render_dirty_regions=false
 debug.hwui.use_buffer_age=false
-
-#gpu
 ro.hardware.egl=mali
 
-#mtk
+# performance
+#ro.mtk_perf_simple_start_win=1
+#ro.mtk_perf_fast_start_win=1
+#ro.mtk_perf_response_time=1
+
 ro.mediatek.chip_ver=S01
 ro.mediatek.version.release=alps-mp-n1.mp1-V1_lenovo6737m.35.n1_P68
 ro.mediatek.version.branch=alps-mp-n1.mp1
@@ -82,31 +87,23 @@ persist.radio.default.sim=0
 persist.radio.mobile.data=0,0
 persist.radio.multisim.config=dsds
 bgw.current3gband=0
-
-#ril
 ril.external.md=0
 ril.telephony.mode=0
+persist.radio.fd.counter=150
+persist.radio.fd.off.counter=50
+persist.radio.fd.r8.counter=150
+persist.radio.fd.off.r8.counter=50
 persist.gemini.sim_num=2
 ro.gemini.smart_sim_switch=false
 ro.com.android.mobiledata=false
 ro.mtk_lte_support=1
-
-#boot
 ro.boot.opt_lte_support=1
 ro.boot.opt_c2k_lte_mode=0
 ro.boot.opt_md1_support=5
 ro.boot.opt_md2_support=0
 ro.boot.opt_md3_support=0
 ro.boot.opt_md5_support=0
-ro.boot.opt_eccci_c2k=0
-
-#radio
 persist.radio.mtk_ps3_rat=G
-persist.radio.fd.counter=150
-persist.radio.fd.off.counter=50
-persist.radio.fd.r8.counter=150
-persist.radio.fd.off.r8.counter=50
-
 ro.mtk_md_sbp_custom_value=0
 ro.mtk_world_phone_policy=0
 ro.mtk_fd_support=1
@@ -115,6 +112,5 @@ ro.mtk_protocol1_rat_config=Lf/Lt/W/G
 ro.longcheer.sku=EMEA
 ro.longcheer.simsum=2
 ro.longcheer.thermal=1
-
-#media
+ro.boot.opt_eccci_c2k=0
 media.settings.xml=/vendor/etc/media_profiles.xml
