@@ -24,8 +24,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-	android.hardware.camera.provider@2.4-impl-legacy \
- 	camera.device@1.0-impl-legacy
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # Health HAL
 PRODUCT_PACKAGES += \
@@ -51,16 +53,18 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-	android.hardware.light@2.0-impl
+	android.hardware.light@2.0-impl \
+    	android.hardware.light@2.0-service
 
 # PowerHAL
 PRODUCT_PACKAGES += \
-	android.hardware.power@1.0-impl
+	android.hardware.power@1.0-impl \
 	android.hardware.power@1.0-service
 
 # Sensors
 PRODUCT_PACKAGES += \
-	android.hardware.sensors@1.0-impl
+	android.hardware.sensors@1.0-impl \
+ 	android.hardware.sensors@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
