@@ -35,7 +35,7 @@
 #include <hardware/power.h>
 #include "power-feature.h"
 
-#define GESTURE_CONTROL_PATH "/sys/kernel/wakeup_reasons" /*if this will not work will use disp_mgr PATH*/
+#define GESTURE_CONTROL_PATH "/sys/kernel/wakeup_reasons/last_suspend_time" /*if this will not work will use disp_mgr PATH*/
 #define DOUBLE_TAP_TO_WAKE_ENABLE_VALUE "1"
 #define DOUBLE_TAP_TO_WAKE_DISABLE_VALUE "0"
 
