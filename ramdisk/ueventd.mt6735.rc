@@ -42,7 +42,7 @@
 /dev/mt6605               0660   nfc        radio
 
 # MTK BTIF driver
-/dev/btif                 0600   system     system
+/dev/btif                 0600   system     bluetooth
 
 # Trusty driver
 /dev/trusty-ipc-dev0      0660   system     keystore
