@@ -154,6 +154,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libbluetooth_jni \
     bluetooth.default \
+    libbluetooth_mtk \
     libbt-vendor
 
 # FM Radio
