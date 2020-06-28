@@ -89,6 +89,7 @@ on post-fs-data
     chmod 0771 /nvdata
     symlink /nvdata /data/nvram
     mkdir /nvdata/media 0771 media audio
+    chmod 0777 /data/nvram/APCFG/APRDEB/BT_Addr
 
     # Set SELinux security contexts on upgrade or policy update.
     restorecon_recursive /nvdata
