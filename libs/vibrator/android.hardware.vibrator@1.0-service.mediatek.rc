@@ -1,5 +1,5 @@
 on post-fs
-    chown system system /sys/kernel/thunderquake_engine/level
+    chown system system /sys/class/timed_out/vibrator
 
 service vibrator-1-0 /vendor/bin/hw/android.hardware.vibrator@1.0-service.mediatek
     class hal
