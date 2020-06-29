@@ -152,8 +152,6 @@ PRODUCT_PACKAGES += \
     
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbluetooth_jni \
-    bluetooth.default \
     libbluetooth_mtk \
     libbt-vendor
 
