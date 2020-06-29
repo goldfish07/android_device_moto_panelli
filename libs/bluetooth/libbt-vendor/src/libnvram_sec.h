@@ -59,6 +59,7 @@
 #define __NVRAM_LIB_SEC_H
 
 #include "libnvram.h"
+#include "libnvram_log.h"
 #include "CFG_file_lid.h"
 #include "Custom_NvRam_LID.h"
 //#include "sec_nvram.h"
@@ -77,18 +78,13 @@ extern "C"
 #define ENCODE  true
 #define DECODE  false
 
-static bool NVM_InProtectList(int file_lid,int protect_type);
-static bool NVM_CheckBootMode();
 bool NVM_Enc_Dnc_File(int file_lid, bool IS_end);
 bool NVM_CheckWritePermission(bool IsRead, int file_lid);
-static const TCFG_FILE* NVM_GetCfgFileTableForSec(int file_lid);
 
-
-typedef struct
-{
-   int lid;
-   unsigned char meta_mode_write;
-   unsigned char security_enable;
+typedef struct {
+	int lid;
+	unsigned char meta_mode_write;
+	unsigned char security_enable;
 } TCFG_FILE_PROTECT;
 
 
@@ -100,11 +96,10 @@ typedef struct
 /******************************************************************************
  *  MODEM CONTEXT FOR BOTH USER SPACE PROGRAM AND KERNEL MODULE
  ******************************************************************************/
-typedef struct
-{
-    unsigned char data[NVRAM_CIPHER_LEN];
-    unsigned int ret;
-    
+typedef struct {
+	unsigned char data[NVRAM_CIPHER_LEN];
+	unsigned int ret;
+
 } META_CONTEXT;
 
 /******************************************************************************

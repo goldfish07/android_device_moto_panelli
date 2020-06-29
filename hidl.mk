@@ -9,10 +9,11 @@ PRODUCT_PACKAGES += \
 	android.hardware.wifi@1.0-service \
 	android.system.net.netd@1.0
 
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-	android.hardware.bluetooth@1.0-service \
-	android.hardware.bluetooth@1.0-impl
+    android.hardware.bluetooth@1.0-impl-mediatek \
+    android.hardware.bluetooth@1.0-service-mediatek
 
 # GPS
 PRODUCT_PACKAGES += \

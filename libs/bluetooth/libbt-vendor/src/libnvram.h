@@ -68,27 +68,24 @@ extern "C"
 {
 #endif
 
-#ifndef bool
-#define bool int
-#define false 0
-#define true 1
-#endif
 
 #define NVRAM_JOURNAL_HANDLE_SIZE	512
 
 #define NVRAM_JOURNAL_MAGIC 0x5a5a7b7b
 #define NVRAM_MISC_JOURNAL_MAGIC 0x4D52564E
 #define MAX_FUNCTION_NAME_LENGTH  48
+#define MAX_IMEI_LENGTH           130  //IMEI is 120
+#define MAX_BARCODE_LENGTH        250   //barcode is 66
 //#define LOG_BLOCK_NUMBER   8
 //#define RESERVE_BLOCK_NUMBER    8
-#define MAX_LOG_LENGTH  (NVRAM_JOURNAL_HANDLE_SIZE - 5 * sizeof(unsigned int) - sizeof(time_t) - MAX_FUNCTION_NAME_LENGTH)
+#define MAX_LOG_LENGTH  (NVRAM_JOURNAL_HANDLE_SIZE - 5 * sizeof(unsigned int) - sizeof(time_t) - MAX_FUNCTION_NAME_LENGTH-MAX_IMEI_LENGTH-MAX_BARCODE_LENGTH)                    //add by min,MAX_LOG_LENGTH must change
 #define DEFAULT_LOG_LEVEL 1
 #define NVRAM_JOURNAL_SUPER_PAGE  0
 #define NVRAM_JOURNAL_LOG_PAGE  1
 #define NVRAM_MNT_POINT "/nvram"
 #define MISC_MNT_POINT "/misc"
 #define PROINFO_MNT_POINT "/proinfo"
-#define NVDATA_MNT_POINT "/nvdata"
+#define NVDATA_MNT_POINT "/mnt/vendor/nvdata"
 
 typedef struct {
 	char 	cFileVer[FILEVERLENGTH];
@@ -97,37 +94,39 @@ typedef struct {
 	int 	i4RecNum;
 	int 	i4MaxFileLid;
 } F_INFO;
-typedef struct{
+typedef struct {
 	int iFileDesc;
 	int ifile_lid;
 	bool bIsRead;
 } F_ID;
 
-typedef enum{
+typedef enum {
 	VerUpdate,
 	VerDel,
 	VerAdd,
-}VerInfoUpdateFlag;
+} VerInfoUpdateFlag;
 
 #pragma pack(4)
 typedef struct nvram_journal_handle {
-    unsigned int h_magic;
-    unsigned int h_type;
-    unsigned int h_sequence;
-    time_t h_utc_time;
-    char h_func_name[MAX_FUNCTION_NAME_LENGTH];
-    unsigned int h_func_line;
-    unsigned int h_log_lengeh;
-    char h_log[MAX_LOG_LENGTH];
+	unsigned int h_magic;
+	unsigned int h_type;
+	unsigned int h_sequence;
+	time_t h_utc_time;
+	char h_func_name[MAX_FUNCTION_NAME_LENGTH];
+	unsigned int h_func_line;
+	unsigned int h_log_lengeh;
+	char h_log[MAX_LOG_LENGTH];
+    unsigned char  imei[MAX_IMEI_LENGTH];
+    unsigned char barcode[MAX_BARCODE_LENGTH];
 } nvram_journal_handle_t;
 #pragma pack()
 #define ISREAD      1
 #define ISWRITE     0
-
+#if 0
 #ifdef _WIN32
 #define LOGD(x)
 #else
-#include <utils/Log.h>
+#include <log/log.h>
 #undef LOG_TAG
 #define LOG_TAG "NVRAM"
 #endif
@@ -137,10 +136,11 @@ typedef struct nvram_journal_handle {
     do { \
         ALOGD(__VA_ARGS__); \
     } while (0)
+#endif
+bool NVM_GetBackupFileNum(unsigned int * iAPBackupFileNum,
+                          unsigned short *iMDBackupFileNum);
 
-bool NVM_GetBackupFileNum(unsigned int * iAPBackupFileNum, unsigned short *iMDBackupFileNum);
-
-bool NVM_AddBackupNum(unsigned int iModifiedFileNum,int iSrc);
+bool NVM_AddBackupNum(unsigned int iModifiedFileNum, int iSrc);
 
 bool NVM_AddBackupFileNum(unsigned int iLid);
 
@@ -414,35 +414,38 @@ int NVM_GetLIDByName(char* filename);
 ********************************************************************************/
 
 
-bool NVM_DataVerConvertAll(unsigned int iOldCommonFileNum,unsigned int iOldCustomFileNum);
+bool NVM_DataVerConvertAll(unsigned int iOldCommonFileNum,
+                           unsigned int iOldCustomFileNum);
 int NVM_DataVerConvert(int file_lid);
-int NVM_ProtectDataFile(int file_lid,bool Setflag);
+int NVM_ProtectDataFile(int file_lid, bool Setflag);
 bool NVM_CheckBackFlag(int iFileDesc);
 bool NVM_CheckMDBackFlag(int iFileDesc);
 bool NVM_ComputeBackflagCheckSum(int iFileDesc);
-bool NVM_RestoreFromBinRegion_OneFile(int file_lid,const char * filename);
-bool NVM_HistoryLog(unsigned int level, const char *func, unsigned int line, const char *log);
+bool NVM_RestoreFromBinRegion_OneFile(int file_lid, const char * filename);
+bool NVM_HistoryLog(unsigned int level, const char *func, unsigned int line,
+                    const char *log);
+bool NVM_HistoryLog_Time(unsigned int level, const char *func, unsigned int line,const char *log,unsigned char *time);
 unsigned int NVM_GetSequenceNum(void);
 bool NVM_IncSequenceNum(unsigned int sequence);
 bool NVM_InSpecialLidList(int file_lid, int *index);
 bool NVM_CheckFile(const char * filepath);
 
 #define NVRAM_HISTORY_LOG(n, log)   NVM_HistoryLog(n, __func__, __LINE__, log)
-
+#define NVRAM_HISTORY_LOG_TIME(n,time,log)   NVM_HistoryLog_Time(n, __func__, __LINE__, log , time)//add by min
 
 bool NVM_MiscIncSeqNum(unsigned int sequence);
 unsigned int NVM_MiscGetSeqNum(void);
-bool NVM_MiscLog(unsigned int level, const char *func, unsigned int line, const char *log);
+bool NVM_MiscLog(unsigned int level, const char *func, unsigned int line,
+                 const char *log);
 #define NVRAM_MISC_LOG(n, log)   NVM_MiscLog(n, __func__, __LINE__, log)
 
 bool NVM_GetDeviceInfo(const char *path, struct mtd_info_user *device_info);
 extern int init_nvram_platform_callback();
-extern int nvram_platform_callback();
+
 
 bool Check_FileVerinFirstBoot(void);
 
 bool Check_UpdateStatus(void);
-bool Change_DataNvramPermission(const char *cmd);
 
 bool NVM_EraseDeviceBlock(const char *path, struct erase_info_user erase_info);
 
@@ -454,14 +457,17 @@ typedef struct NVRAM_PLATFORM {
 	int layout_version;
 	int header_offset;
 } NVRAM_PLATFORM_T;
+extern int nvram_platform_callback(NVRAM_PLATFORM_T* pPlatform );
 
 extern int nvram_multi_storage_support(NVRAM_PLATFORM_T* pPlatform );
+extern bool nvram_md1_support();
 extern bool nvram_md5_support();
 extern bool nvram_evdo_support();
-int NVM_CheckFileSize(int iRealFileLid,const TCFG_FILE *pCfgFielTable);
+int NVM_CheckFileSize(int iRealFileLid, const TCFG_FILE *pCfgFielTable);
 extern bool nvram_new_partition_support();
 extern bool nvram_emmc_support();
 extern bool nvram_ecci_c2k_support();
+extern bool nvram_ufs_support();
 
 #ifdef __cplusplus
 }
