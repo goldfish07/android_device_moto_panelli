@@ -2,7 +2,7 @@
 PRODUCT_RELEASE_NAME := panelli
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/crdroid/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/moto/panelli/device_panelli.mk)
