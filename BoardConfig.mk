@@ -95,9 +95,6 @@ TARGET_USES_NON_TREBLE_CAMERA := true
 TARGET_LD_SHIM_LIBS += \
 	/system/vendor/lib/hw/camera.mt6737m.so
 
-# Lineage Hardware
-BOARD_HARDWARE_CLASS += device/moto/panelli/lineagehw
-
 # RIL
 BOARD_RIL_CLASS := ../../../device/moto/panelli/ril/
 

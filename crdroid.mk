@@ -1,6 +1,3 @@
-# Specify phone tech before including full_phone	
-$(call inherit-product, vendor/lineage/config/telephony.mk)
-
 # Release name
 PRODUCT_RELEASE_NAME := panelli
 
@@ -17,7 +14,7 @@ TARGET_SCREEN_HEIGHT := 1280
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := panelli
-PRODUCT_NAME := lineage_panelli
+PRODUCT_NAME := crdroid_panelli
 PRODUCT_BRAND := moto
 PRODUCT_MODEL := panelli
 PRODUCT_MANUFACTURER := moto
